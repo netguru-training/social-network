@@ -1,0 +1,44 @@
+!!!
+%html{ lang: 'en' }
+  %head
+    %meta{ charset: 'utf-8' }/
+    %meta{ content: 'IE=Edge,chrome=1', 'http-equiv' => 'X-UA-Compatible' }/
+    %meta{ content: 'width=device-width, initial-scale=1.0', name: 'viewport' }/
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+
+  %body
+    %title Netguru
+
+    %nav.navbar.navbar-default{role: "navigation"}
+      .navbar-header
+        %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{href: root_path} Netguru Kraków Workshops 2014
+      .collapse.navbar-collapse.navbar-ex1-collapse
+        %ul.nav.navbar-nav
+          %li
+            %a{href: root_path}  CATEGORIES
+          %li
+            %a{href: products_path}  PRODUCTS
+
+        %ul.nav.navbar-nav.navbar-right
+          - if signed_in?
+            %li
+              %a{href: profile_path } PROFILE
+            %li
+              = link_to 'LOG OUT', destroy_user_session_path, :method => :delete          
+          - else
+            %li
+              %a{href: new_user_session_path }  LOG IN
+            %li
+              %a{href: new_user_registration_path } SIGN UP                     
+
+    .container-fluid
+      .row
+        .col-lg-12
+          = yield
