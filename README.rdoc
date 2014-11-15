@@ -1,4 +1,4 @@
-heroku link [https://social-network2.herokuapp.com](https://social-network2.herokuapp.com)
+[Heroku link](https://social-network2.herokuapp.com)
 
 == README
 
