@@ -33,6 +33,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'therubyracer', '~> 0.10.2'
 gem 'decent_exposure'
 gem 'draper'
+gem 'decent_decoration'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

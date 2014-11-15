@@ -1,9 +1,8 @@
 class GroupsController < ApplicationController
 
-  expose(:group, attributes: :group_params)
-  expose(:groups)
+  expose_decorated(:group, attributes: :group_params)
+  expose_decorated(:groups)
   expose(:categories)
-  
 
   # GET /groups
   # GET /groups.json
@@ -41,7 +40,6 @@ class GroupsController < ApplicationController
   # PATCH/PUT /groups/1.json
   def update
     respond_to do |format|
-      binding.pry
       if group.update(group_params)
         format.html { redirect_to group, notice: 'Group was successfully updated.' }
         format.json { render :show, status: :ok, location: group }
