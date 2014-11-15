@@ -1,2 +1,39 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+* {
+  border-radius: 0px !important;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: image-url("socialize.png") no-repeat center center fixed ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  #signin {
+    border-radius: 15px !important;
+    a {
+      padding: 10px;
+      font-size: 2em;
+      &:hover {
+        text-decoration: none;
+
+      }
+    }
+  }
+
+  /* bootstrap components */
+  .jumbotron {
+    background: rgb(250, 250, 250); /* This is for ie8 and below */
+    background: rgba(250, 250, 250, 0);
+    text-align: center;
+    padding-top: 50%;
+  }
+}

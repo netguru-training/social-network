@@ -12,6 +12,8 @@ gem 'sass-rails', '~> 4.0.3'
 
 gem 'bootstrap-sass'
 
+gem "font-awesome-rails"
+
 gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -30,7 +32,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'therubyracer', '~> 0.10.2'
 gem 'decent_exposure'
-
+gem 'draper'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

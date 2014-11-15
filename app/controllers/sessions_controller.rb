@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id.to_s
     respond_to do |format|
       flash[:notice] = 'Signed in!'
-      format.html { redirect_to root_url }
+      format.html { redirect_to categories_path }
     end
   end
 
