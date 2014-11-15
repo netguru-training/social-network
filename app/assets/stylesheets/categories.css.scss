@@ -23,6 +23,7 @@
     }
   }
   .category:hover {
+    text-decoration: none;
     @include filter(hue-rotate, 360deg);
   }
   @media (max-width: $screen-xs-max) {
