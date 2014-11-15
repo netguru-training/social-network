@@ -2,17 +2,17 @@
 
 %p
   %b Title:
-  = @event.title
+  = event.title
 %p
   %b Description:
-  = @event.description
+  = event.description
 %p
   %b Time:
-  = @event.time
+  = event.time
 %p
   %b Location:
-  = @event.location
+  = event.location
 
-= link_to 'Edit', edit_event_path(@event)
+= link_to 'Edit', edit_event_path(event)
 \|
 = link_to 'Back', events_path
