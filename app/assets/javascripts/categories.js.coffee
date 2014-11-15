@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   for category in $('.category')
-    text = $($(category).find('h2')[0]).text()
+    $category = $(category)
+    text = $category.find($('h2')).text()
     pattern = GeoPattern.generate(text);
-    $(category).css('background-image', pattern.toDataUrl());
+    $category.css('background-image', pattern.toDataUrl());
