@@ -33,6 +33,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'therubyracer', '~> 0.10.2'
 gem 'decent_exposure'
 gem 'draper'
+gem 'dotenv-rails'
+gem "paperclip", "~> 4.2"
+gem 'aws-sdk', '~> 1.5.7'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
@@ -46,7 +49,6 @@ gem 'spring',        group: :development
 gem 'omniauth-facebook'
 
 group :development do
-  gem 'dotenv-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
