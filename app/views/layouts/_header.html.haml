@@ -12,9 +12,10 @@
     %ul.nav.navbar-nav.navbar-right
       %li.hidden
         %a{:href => "#page-top"}
+      - if current_user.location
+        %li.page-scroll
+          %p.location= current_user.location
       %li.page-scroll
         %img{ src: current_user.image }
-        - if current_user.location
-          %p= current_user.location
       %li.page-scroll
         %a{:href => "signout"} Log out
