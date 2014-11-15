@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   serialize :info, Hash
   def image
-    auth_data['image'] || '' if auth_data
+    info['image'] || '' if info
   end
 
   def self.create_with_omniauth(auth)
