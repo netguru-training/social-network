@@ -1,5 +1,20 @@
-.location {
-  margin: 0px;
-  margin-right: 10px;
-  line-height: 50px;
+
+.navbar-default {
+  padding: 5xp !important;
+  font-size: 1.8em !important;
+  padding: 2px;
+  background-color: #fff;
+  border-bottom: 1px solid #e7e7e7;
+  p, a { font-size: 20px;}
+
+  img { border-radius: 10px !important;}
+
+  ul li { text-align: center;}
+
+  .location {
+    margin: 0px;
+    margin-right: 10px;
+    line-height: 50px;
+    color: #777777;
+  }
 }
