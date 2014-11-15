@@ -1,5 +1,6 @@
 -if current_user
   %a{ href: 'signout'} Sign out
   %img{ src: current_user.image }
+  %b= current_user.location
 -else
   %a{ href: 'auth/facebook' } Sign in via Facebook
