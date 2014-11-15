@@ -1,18 +1,27 @@
-%p#notice= notice
-
-%p
-  %b Title:
-  = event.title
-%p
-  %b Description:
-  = event.description
-%p
-  %b Time:
-  = event.time
-%p
-  %b Location:
-  = event.location
-
-= link_to 'Edit', edit_event_path(event)
-\|
-= link_to 'Back', events_path
+.row
+  .col-lg-1
+  .col-lg-10
+    %p#notice= notice
+    
+    %h1
+      = event.title 
+    %p
+      %b
+        = event.time.to_formatted_s(:long)
+          
+    .row
+      .col-lg-4  
+        %img{:src => event.photo.url(:medium)}
+      .col-lg-3 
+        %p
+          %b Description:
+          = event.description
+      .col-lg-3          
+      
+    %p
+      %b Location:
+      = event.location
+    
+    = link_to 'Edit', edit_event_path(event), :class => "btn btn-info"
+    = link_to 'Back', events_path, :class => "btn btn-danger"
+  .col-lg-1
