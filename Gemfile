@@ -37,6 +37,7 @@ gem 'decent_decoration'
 gem 'dotenv-rails'
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk', '~> 1.5.7'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'rspec-rails'
