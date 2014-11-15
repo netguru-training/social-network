@@ -9,15 +9,18 @@ class SessionsController < ApplicationController
     user.update! info: auth.info
     reset_session
     session[:user_id] = user.id.to_s
-    respond_to do |format|
-      flash[:notice] = 'Signed in!'
-      format.html { redirect_to categories_path }
-    end
+    flash[:notice] = 'Signed in!'
+    redirect_to categories_path
   end
 
   def destroy
     reset_session
+    flash[:notice] = 'Sign out.'
     redirect_to root_url
   end
 
+  def failure
+    flash[:alert] = "Authentication error: #{params[:message].humanize}"
+    redirect_to root_url
+  end
 end
