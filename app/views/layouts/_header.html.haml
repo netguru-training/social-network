@@ -1,4 +1,18 @@
 .navbar-inverse
-    %a{ href: 'signout'} Sign out
-    %img{ src: current_user.image }
-    %b= current_user.location
+  / Brand and toggle get grouped for better mobile display
+  .navbar-header.page-scroll
+    %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+      %span.sr-only Toggle navigation
+      %span.icon-bar
+    %a.navbar-brand{:href => categories_path} Logo name
+  / Collect the nav links, forms, and other content for toggling
+  #bs-example-navbar-collapse-1.collapse.navbar-collapse
+    %ul.nav.navbar-nav.navbar-right
+      %li.hidden
+        %a{:href => "#page-top"}
+      %li.page-scroll
+        %img{ src: current_user.image }
+        - if current_user.location
+          %p= current_user.location
+      %li.page-scroll
+        %a{:href => "signout"} Log out
