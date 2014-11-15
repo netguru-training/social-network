@@ -21,7 +21,6 @@ body {
     border-radius: 15px !important;
     a {
       padding: 10px;
-      font-size: 2em;
       &:hover {
         text-decoration: none;
 
@@ -43,7 +42,10 @@ body {
     padding: 2px;
     background: rgb(0, 0, 0); /* This is for ie8 and below */
     background: rgba(0, 0, 0, 0.9);
+    p, a { color: white !important; font-size: 1.2em;}
 
     img { border-radius: 10px !important;}
+
+    ul li { text-align: center;}
   }
 }
