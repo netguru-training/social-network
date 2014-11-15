@@ -1,8 +1,5 @@
 class User < ActiveRecord::Base
   serialize :info, Hash
-  def image
-    info['image'] || '' if info
-  end
 
   def self.create_with_omniauth(auth)
     create! do |user|
