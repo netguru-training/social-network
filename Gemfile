@@ -38,6 +38,7 @@ gem 'dotenv-rails'
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk', '~> 1.5.7'
 gem 'rails_12factor', group: :production
+gem "geocoder"
 
 group :development, :test do
   gem 'rspec-rails'
