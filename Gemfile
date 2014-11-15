@@ -34,6 +34,9 @@ gem 'therubyracer', '~> 0.10.2'
 gem 'decent_exposure'
 gem 'draper'
 gem 'decent_decoration'
+gem 'dotenv-rails'
+gem "paperclip", "~> 4.2"
+gem 'aws-sdk', '~> 1.5.7'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -48,7 +51,6 @@ gem 'spring',        group: :development
 gem 'omniauth-facebook'
 
 group :development do
-  gem 'dotenv-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
