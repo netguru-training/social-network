@@ -12,7 +12,7 @@ gem 'sass-rails', '~> 4.0.3'
 
 gem 'bootstrap-sass'
 
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -35,10 +35,10 @@ gem 'decent_exposure'
 gem 'draper'
 gem 'decent_decoration'
 gem 'dotenv-rails'
-gem "paperclip", "~> 4.2"
+gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '~> 1.5.7'
 gem 'rails_12factor', group: :production
-gem "geocoder"
+gem 'geocoder'
 
 group :development, :test do
   gem 'rspec-rails'
