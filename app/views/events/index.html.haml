@@ -19,7 +19,7 @@
           %td
             %img{:src => event.photo.url(:thumb)}
           %td= event.title
-          %td= event.description
+          %td= description_substring(event.description)
           %td= event.time.to_formatted_s(:long)
           %td= event.location
           %td= link_to 'Show', event, :class => "btn btn-info"
