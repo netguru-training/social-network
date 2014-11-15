@@ -1,6 +1,6 @@
 <h1>Listing groups</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -11,11 +11,11 @@
   </thead>
 
   <tbody>
-    <% @groups.each do |group| %>
+    <% groups.each do |group| %>
       <tr>
         <td><%= group.name %></td>
         <td><%= group.description %></td>
-        <td><%= group.category %></td>
+        <td><%= group.category.name %></td>
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
         <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
