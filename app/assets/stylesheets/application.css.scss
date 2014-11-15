@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'categories';
 
 * {
   border-radius: 0px !important;
@@ -10,20 +11,23 @@ html {
 }
 
 body {
-  height: 100%;
-  background: image-url("socialize.png") no-repeat center center fixed ;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-color: white;
+  &.sessions.new {
+    height: 100%;
+    background: image-url("socialize.png") no-repeat center center fixed ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 
   #signin {
     border-radius: 15px !important;
     a {
       padding: 10px;
+      font-size: 2em;
       &:hover {
         text-decoration: none;
-
       }
     }
   }
@@ -48,4 +52,7 @@ body {
 
     ul li { text-align: center;}
   }
+}
+.table-events {
+  background: white;
 }
