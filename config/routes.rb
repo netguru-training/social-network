@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :groups
+
   resources :events
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
