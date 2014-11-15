@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
-  def index
-  end
+ 
+  expose(:categories)
+
+  def index;end
+
 end

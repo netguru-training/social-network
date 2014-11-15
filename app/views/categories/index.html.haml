@@ -1,1 +1,9 @@
-adasda
+%h1 Listing categories
+
+%table
+  %tr
+    %th Title
+
+  - categories.each do |category|
+    %tr
+      %td= category.name
