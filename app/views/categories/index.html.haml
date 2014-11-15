@@ -1,9 +1,4 @@
-%h1 Listing categories
-
-%table
-  %tr
-    %th Title
-
-  - categories.each do |category|
-    %tr
-      %td= category.name
+- categories.each do |category|
+  .category-grid
+    .category
+      %h2= category.name
