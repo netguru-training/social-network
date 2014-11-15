@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+.jumbotron#signin
+  = link_to 'Sign in with Facebook', 'auth/facebook', class: 'btn btn-primary', id: 'signin'
+=======
+-if current_user
+  %a{ href: 'signout'} Sign out
+  %img{ src: current_user.image }
+  %b= current_user.location
+-else
+  %a{ href: 'auth/facebook' } Sign in via Facebook
+>>>>>>> 3a618e08fac9860634a3a669b60e99cca35a4337

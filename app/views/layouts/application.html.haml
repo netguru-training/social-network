@@ -6,6 +6,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-  %div.container
-    .row
-      = yield
+    - if current_user
+      = render 'layouts/header'
+    %div.container
+      .row
+        = yield
