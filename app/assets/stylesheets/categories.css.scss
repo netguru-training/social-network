@@ -7,18 +7,7 @@
   display: inline-block;
   float: left;
   padding: 10px;
-  @media (max-width: $screen-xs-max) {
-    width: 100%;
-  }
-  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-    width: 50%;
-  }
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    width: 33%;
-  }
-  @media (min-width: $screen-lg-min) { 
-    width: 33%;
-  }
+
   .category {
     background-color: #fff;
     width: 100%;
@@ -31,5 +20,19 @@
       text-shadow: 1px 2px 8px black;
       color: white;
     }
+  }
+  @media (max-width: $screen-xs-max) {
+    padding: 5px;
+    width: 100%;
+    .category {
+      height: 80px;
+      h2 { line-height: 80px; }
+    }
+  }
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    width: 50%;
+  }
+  @media (min-width: $screen-md-min) {
+    width: 33%;
   }
 }
