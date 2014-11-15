@@ -11,12 +11,15 @@ html {
 }
 
 body {
-  height: 100%;
-  background: image-url("socialize.png") no-repeat center center fixed ;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-color: white;
+  &.sessions.new {
+    height: 100%;
+    background: image-url("socialize.png") no-repeat center center fixed ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 
   #signin {
     border-radius: 15px !important;
@@ -25,7 +28,6 @@ body {
       font-size: 2em;
       &:hover {
         text-decoration: none;
-
       }
     }
   }
@@ -44,7 +46,13 @@ body {
     padding: 2px;
     background: rgb(0, 0, 0); /* This is for ie8 and below */
     background: rgba(0, 0, 0, 0.9);
+    p, a { color: white !important; font-size: 1.2em;}
 
     img { border-radius: 10px !important;}
+
+    ul li { text-align: center;}
   }
+}
+.table-events {
+  background: white;
 }
