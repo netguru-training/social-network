@@ -1,5 +1,6 @@
 <h1>Listing groups</h1>
 
+<div class="well">
 <table class="table">
   <thead>
     <tr>
@@ -15,7 +16,7 @@
       <tr>
         <td><%= group.name %></td>
         <td><%= group.description %></td>
-        <td><%= group.category.name %></td>
+        <td><%= group.cat_name %></td>
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
         <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,3 +28,4 @@
 <br>
 
 <%= link_to 'New Group', new_group_path %>
+</div>
