@@ -41,7 +41,13 @@ gem 'spring',        group: :development
 
 gem 'omniauth-facebook'
 
-gem 'dotenv-rails', :groups => [:development, :test]
+group :development do
+  gem 'dotenv-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'quiet_assets'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
