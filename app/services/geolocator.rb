@@ -1,9 +1,9 @@
 class Geolocator
   def initialize(user, session = nil, request)
-    if session.try(:geolocation)
+    if session[:geolocation]
       geo = session[:geolocation]
-      @latitude = geo[:lat]
-      @longitude = geo[:long]
+      @latitude = geo['lat']
+      @longitude = geo['long']
     elsif user.try(:location)
       location = Geocoder.search(user.location)[0].coordinates
       @latitude = location[0]

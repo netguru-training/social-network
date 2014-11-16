@@ -7,7 +7,7 @@ $ ->
     for link in links
       link = $(link)
       old_href = link.attr('href')
-      link.attr('href', "#{old_href}?lat=#{position.coords.latitude}&long=#{position.coords.latitude}")
+      link.attr('href', "#{old_href}?lat=#{position.coords.latitude}&long=#{position.coords.longitude}")
 
   if(navigator.geolocation)
     navigator.geolocation.getCurrentPosition(geolocation_fn)

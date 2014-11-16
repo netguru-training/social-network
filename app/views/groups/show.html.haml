@@ -1,13 +1,17 @@
-%p#notice= notice
-%p
-  %strong Name:
-  = group.name
-%p
-  %strong Description:
-  = group.description
-%p
-  %strong Category:
-  = group.cat_name
-= link_to 'Edit', edit_group_path(group)
-|
-\#{link_to 'Back', groups_path}
+.row
+  .col-lg-3
+  .col-lg-6
+    %h2
+      %p#notice= notice
+      %p
+        %strong Group:
+        = group.name
+      %p
+        %strong Description:
+        = group.description
+      %p
+        %strong Category:
+        = link_to group.cat_name, category_path(group.category)
+    = link_to 'Edit', edit_group_path(group)
+    |
+    \#{link_to 'Back', groups_path}
