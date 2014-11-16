@@ -62,7 +62,7 @@ group :development do
   gem 'rubocop'
 end
 
-group :production dp
+group :production do
   gem 'unicorn'
 end
 # Use ActiveModel has_secure_password
