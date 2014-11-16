@@ -5,7 +5,7 @@ class EventSearch < Searchlight::Search
   searches :name, :category_name, :nearby, :nearby_radius
 
   def search_category_name
-    search.where('`categories.`name` = ?', category_name)
+    search.where('`categories.name` = ?', category_name)
   end
   
   def search_nearby
