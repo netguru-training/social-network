@@ -24,6 +24,12 @@
         %li.page-scroll
           %p.location= current_user.location
       %li.page-scroll
-        %a{:href => "signout"} Log out
-      %li.page-scroll
-        %img{ src: current_user.image }
+        .dropdown
+          %img{ src: current_user.image, :class => "dropdown-toggle", "data-toggle" => "dropdown", "id" => "dropdownMenu1", "aria-expanded" => "true"}
+            %span.caret
+          %ul.dropdown-menu{"role" => "menu", "aria-labelledby" => "dropdownMenu1"}
+            %li{"role" => "presentation"}
+              %a{"role" => "menuitem", "tabindex" => "-1", "href" =>"profile"} Profile
+            %li{"role" => "presentation"}
+              %a{"role" => "menuitem", "tabindex" => "-1", "href" =>"signout"} Log out
+
