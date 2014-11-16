@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
 
+  before_action :authenticate_user
   expose_decorated(:group, attributes: :group_params)
   expose_decorated(:groups)
   expose(:categories)
@@ -61,7 +62,7 @@ class GroupsController < ApplicationController
   end
 
   private
-   
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
       params.require(:group).permit(:name, :description, :category_id)

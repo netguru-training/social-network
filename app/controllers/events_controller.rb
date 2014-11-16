@@ -1,8 +1,11 @@
 class EventsController < ApplicationController
+
+  before_action :authenticate_user
   before_action :is_owner, only: [:update, :edit]
   expose(:categories)
-  expose(:events) { get_proper_events }
-  expose(:event)
+  expose_decorated(:events) { get_proper_events }
+  expose_decorated(:event)
+  expose(:my) { Geolocator.new(current_user, session, request).call }
 
   def index
   end
@@ -45,7 +48,7 @@ class EventsController < ApplicationController
       end
     end
   end
-  
+
   def destroy
     event.destroy
     respond_to do |format|
@@ -55,8 +58,7 @@ class EventsController < ApplicationController
   end
 
   def map
-    @my = Geolocator.new(current_user, session, request).call
-    @events = Event.near(@my, 50)
+    self.events = Event.near(my, 50).decorate
   end
   
   protected
@@ -67,12 +69,12 @@ class EventsController < ApplicationController
   end
   
   private
-  def is_owner 
+  def is_owner
     user = User.find(event.user_id)
     unless current_user == user
       redirect_to(events_url, {:flash => { :error => "You are not allowed to edit this event." }})
     end
-  end 
+  end
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:title, :description, :time, :location, :photo, :category_id)
