@@ -58,7 +58,7 @@ class EventsController < ApplicationController
   end
 
   def map
-    self.events = Event.near(@my, 50).decorate
+    self.events = Event.near(my, 50).decorate
   end
 
   private
