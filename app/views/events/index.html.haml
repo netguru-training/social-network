@@ -2,8 +2,9 @@
   .col-lg-1
   .col-lg-10
     %h1 Listing events
-    %div.alert.alert-info 
-      %p#error= flash[:error]
+    -if flash[:error]
+      %div.alert.alert-danger
+        %p#error= flash[:error]
         
     %table.table.table-striped.table-events
       %tr
