@@ -11,3 +11,6 @@ $ ->
 
   if(navigator.geolocation)
     navigator.geolocation.getCurrentPosition(geolocation_fn)
+  $('.container2').height($('body').height())
+  $( window ).resize ->
+    $('.container2').height($('body').height())
