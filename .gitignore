@@ -17,3 +17,6 @@
 
 /config/database.yml
 .env
+
+# Ignore all orig files.
+*.orig

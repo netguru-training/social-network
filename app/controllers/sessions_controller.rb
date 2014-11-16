@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController
 
+  expose(:user) { User.find(1) }
+
   def new
+  end
+
+  def show
   end
 
   def create

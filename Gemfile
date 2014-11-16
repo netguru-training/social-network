@@ -40,7 +40,7 @@ gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '~> 1.5.7'
 gem 'rails_12factor', group: :production
 gem 'geocoder'
-
+gem 'gmaps4rails'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
