@@ -1,0 +1,16 @@
+.row.bottom-5.border-bottom
+  %br
+  = form_for('search', url: search_events_path, method: :get, :html => {:class => "form-inline"}) do |f|
+    .form-group
+      = f.label      :title, "Title:"
+      = f.text_field :title, class: 'form-control'
+
+    .form-group
+      = f.label      :nearby, "Search Nearby:"
+      = f.text_field :nearby, class: 'form-control'
+
+    .form-group
+      = f.label  :category_name, "Category:"
+      = f.text_field :category_name, class: 'form-control'
+
+    = f.submit "Search", :class => "btn btn-primary"
