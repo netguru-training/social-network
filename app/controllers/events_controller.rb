@@ -54,6 +54,7 @@ class EventsController < ApplicationController
   end
 
   def map
+    @my = Geolocator.new(current_user, session, request).call
   end
 
   private
