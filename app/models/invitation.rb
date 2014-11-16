@@ -6,6 +6,6 @@ class Invitation < ActiveRecord::Base
 
   private
     def defaults
-      message ||= "false"
+      message ||= "User #{self.user.name} invited you to join #{self.event.name} event"
     end
 end
