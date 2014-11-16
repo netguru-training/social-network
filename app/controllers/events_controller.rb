@@ -54,12 +54,14 @@ class EventsController < ApplicationController
   end
 
   def map
+    @my = Geolocator.new(current_user, session, request).call
   end
 
   private
   def is_owner 
-    unless current_user == event.user
-      redirect_to(events_url, {:flash => { :error => "You are not allowed to edit this product." }})
+    user = User.find(event.user_id)
+    unless current_user == user
+      redirect_to(events_url, {:flash => { :error => "You are not allowed to edit this event." }})
     end
   end 
     # Never trust parameters from the scary internet, only allow the white list through.
