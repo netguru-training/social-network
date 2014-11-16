@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :events
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  get 'invitations/index', as: 'invitations'
   get 'auth/failure', to: 'sessions#failure', as: 'auth_failure'
   get 'signout', to: 'sessions#destroy', as: 'signout'
   get 'notifications/index', as: 'notifications'
