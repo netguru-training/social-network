@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+  before_action :if_authenticated
   expose(:user) { User.find(1) }
   expose(:events) {user.events}
 
@@ -30,4 +30,11 @@ class SessionsController < ApplicationController
     flash[:alert] = "Authentication error: #{params[:message].humanize}"
     redirect_to root_url
   end
+
+  private
+    def if_authenticated
+      if current_user
+        redirect_to categories_path
+      end
+    end
 end
