@@ -1,32 +1,6 @@
-.row
-  .col-lg-1
-  .col-lg-10
-    %h1 Listing events
-    
-    %table.table.table-striped.table-events
-      %tr
-        %th Photo
-        %th Title
-        %th Description
-        %th Time
-        %th Location
-        %th
-        %th
-        %th
-    
-      - events.each do |event|
-        %tr
-          %td
-            %img{:src => event.photo.url(:thumb)}
-          %td= event.title
-          %td= description_substring(event.description)
-          %td= event.time.to_formatted_s(:long)
-          %td= event.location
-          %td= link_to 'Show', event, :class => "btn btn-info"
-          %td= link_to 'Edit', edit_event_path(event), :class => "btn btn-warning"
-          %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
-    
-    %br
-    
-    = link_to 'New Event', new_event_path, :class => "btn btn-primary"
+.col-lg-1
+.col-lg-10.text-center
+  %h1 My events
+  = render 'events'
+  = link_to 'New Event', new_event_path, :class => "btn btn-primary top-10"
   .col-lg-1
