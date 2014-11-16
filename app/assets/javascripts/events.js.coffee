@@ -3,5 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  height = $("#event-info").height()
-  $("#image").height(height)
+  info_height = $("#event-info").height()
+  $("#image").height(info_height)
+  img_size = Math.min( $("#image").height(), $("#image").width() )
+  $("#image img").height( img_size ).width( img_size )
