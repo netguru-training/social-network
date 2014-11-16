@@ -1,15 +1,15 @@
 - events.each do |event|
   .row.bottom-5.border-bottom
-    .col-md-4.text-center.pagination-centered#image
-      %img{:src => event.photo.url(:thumb)}
-    .col-md-8.text-center.pagination-centered#event-info
+    .col-md-6.text-center.pagination-centered#image
+      %img{:src => event.photo.url, class: 'img-responsive top-5'}
+    .col-md-6.text-center.pagination-centered#event-info
       %h2= event.title
       %p= description_substring(event.description)
       %h3 Data wydarzenia
       %p= event.time.to_formatted_s(:long)
       %h3 Lokalizacja
       %p= event.location
-      = link_to 'Add friend to event', edit_event_path(event), :class => "btn btn-success bottom-5"
+      = link_to 'Add friend to event', "#", :class => "btn btn-success bottom-5"
       %br
       = link_to 'Show', event, :class => "btn btn-info"
       = link_to 'Edit', edit_event_path(event), :class => "btn btn-warning"
