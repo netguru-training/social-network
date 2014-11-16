@@ -1,6 +1,6 @@
 .map
   .geolocation{ id: 'geolocation' }
   .locations
-    .my{ data: { lat: @my[0], lng: @my[1], name: 'My!' } }
+    .my{ data: { lat: @my[0], lng: @my[1], name: 'My!', infowindow: 'My!' } }
     - @events.each do |event|
-      .location{ data: { lat: event.latitude, lng: event.longitude, name: 'location' }}
+      .location{ data: { lat: event.latitude, lng: event.longitude, name: event.title, infowindow: event.short }}

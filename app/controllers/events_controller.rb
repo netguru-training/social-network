@@ -55,7 +55,7 @@ class EventsController < ApplicationController
 
   def map
     @my = Geolocator.new(current_user, session, request).call
-    @events = Event.near(@my, 50)
+    @events = Event.near(@my, 50).decorate
   end
 
   private
