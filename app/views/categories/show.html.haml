@@ -1,0 +1,9 @@
+%h1 Listing #{category.name} events
+.well
+  -if category.events.size > 0
+    - events.each do |event|
+      %p
+        =link_to event.title, event_path(event)
+  -else
+    %h1 No events for this category
+
