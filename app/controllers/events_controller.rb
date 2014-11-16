@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+
+  before_action :authenticate_user
   before_action :is_owner, only: [:update, :edit]
   expose(:categories)
   expose(:events)
@@ -44,7 +46,7 @@ class EventsController < ApplicationController
       end
     end
   end
-  
+
   def destroy
     event.destroy
     respond_to do |format|
@@ -59,12 +61,12 @@ class EventsController < ApplicationController
   end
 
   private
-  def is_owner 
+  def is_owner
     user = User.find(event.user_id)
     unless current_user == user
       redirect_to(events_url, {:flash => { :error => "You are not allowed to edit this event." }})
     end
-  end 
+  end
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:title, :description, :time, :location, :photo, :category_id)
