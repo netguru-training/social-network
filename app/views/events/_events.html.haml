@@ -1,13 +1,13 @@
 - events.each do |event|
   .row.bottom-5
-    .col-md-4.text-center.pagination-centered
+    .col-md-4.text-center.pagination-centered#image
       %img{:src => event.photo.url(:thumb)}
-    .col-md-8.text-center.pagination-centered
+    .col-md-8.text-center.pagination-centered#event-info
       %h2= event.title
       %p= description_substring(event.description)
       %p= event.time.to_formatted_s(:long)
       %p= event.location
       = link_to 'Show', event, :class => "btn btn-info"
-      - if current_user.id == event.user_id
+      - if (current_user) && (current_user.id == event.user_id)
         = link_to 'Edit', edit_event_path(event), :class => "btn btn-warning"
         = link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
