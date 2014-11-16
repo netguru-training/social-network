@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :if_authenticated
+  before_action :if_authenticated, except: [:destroy]
   expose(:user) { User.find(1) }
   expose(:events) {user.events}
 
