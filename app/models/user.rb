@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   serialize :info, Hash
-  has_many :events, :foreign_key => "user_id"
   has_many :invitation
-
+  has_many :attendances
+  has_many :events, through: :attendances
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth.provider
