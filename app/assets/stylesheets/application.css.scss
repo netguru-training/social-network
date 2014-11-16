@@ -3,6 +3,7 @@
 @import 'categories';
 @import 'header';
 @import 'animate';
+@import 'events';
 * {
   border-radius: 0px !important;
 }
@@ -42,10 +43,4 @@ body {
   }
 
 
-}
-.table-events {
-  background: white;
-}
-.event-description {
-  background: gray;
 }
