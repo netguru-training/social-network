@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   expose(:categories)
   expose(:events)
   expose(:event)
-   
+
   def index
   end
 
@@ -50,6 +50,9 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def map
   end
 
   private
