@@ -7,6 +7,7 @@ class EventsController < ApplicationController
   expose(:event)
 
   def index
+    @events = Event.where(user_id: current_user.id)
   end
 
   def show
