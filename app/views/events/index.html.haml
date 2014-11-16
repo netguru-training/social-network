@@ -1,3 +1,21 @@
+.row
+  .col-lg-1
+  .col-lg-10
+= form_for('search', url: search_events_path, method: :get) do |f|
+  %fieldset
+    = f.label      :name, "Name"
+    = f.text_field :name
+
+  %fieldset
+    = f.label      :nearby, "Search Nearby"
+    = f.text_field :nearby
+
+  %fieldset
+    = f.label  :category_name, "Category"
+    = f.text_field :category_name
+
+  = f.submit "Search"
+  .col-lg-1
 .col-lg-1
 .col-lg-10.text-center
   %h1 My events
