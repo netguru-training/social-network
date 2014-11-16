@@ -13,14 +13,17 @@
       %li.page-scroll
         =link_to "Events", events_path
       %li.page-scroll
-        =link_to "Groups", groups_path  
+        =link_to "Groups", groups_path
     %ul.nav.navbar-nav.navbar-right
       %li.hidden
         %a{:href => "#page-top"}
+      %li.page-scroll
+        = link_to notifications_path do
+          %span.glyphicon.glyphicon-bell{"aria-hidden" => "true"}
       - if current_user.location
         %li.page-scroll
           %p.location= current_user.location
       %li.page-scroll
-        %img{ src: current_user.image }
-      %li.page-scroll
         %a{:href => "signout"} Log out
+      %li.page-scroll
+        %img{ src: current_user.image }

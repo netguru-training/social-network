@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20141116092420) do
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "category_id"
+    t.integer  "user_id",            limit: 8
   end
 
   add_index "events", ["category_id"], name: "index_events_on_category_id", using: :btree
