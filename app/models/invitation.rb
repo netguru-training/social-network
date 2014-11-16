@@ -1,5 +1,5 @@
 class Invitation < ActiveRecord::Base
-  validates_presence_of :message, :user_id
+  validates_presence_of :message
   belongs_to :user
   belongs_to :event
   after_save :defaults
