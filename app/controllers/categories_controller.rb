@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
 
-  before_action :authenticate_user, except: [:sessions]
-  
+  before_action :authenticate_user
+
   expose(:categories)
   expose(:category)
   expose(:events) { category.events}

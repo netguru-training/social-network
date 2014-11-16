@@ -8,6 +8,7 @@ class EventsController < ApplicationController
   expose(:my) { Geolocator.new(current_user, session, request).call }
 
   def index
+    @events = Event.where(user_id: current_user.id)
   end
 
   def show
