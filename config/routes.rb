@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   get 'notifications/index', as: 'notifications'
   get 'profile', to: 'sessions#show', as: 'profile'
   root 'sessions#new'
+  match 'search_events', to: 'events#index', via: [:get]
 end

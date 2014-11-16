@@ -3,11 +3,13 @@ class EventsController < ApplicationController
   before_action :authenticate_user
   before_action :is_owner, only: [:update, :edit]
   expose(:categories)
-  expose(:events)
-  expose(:event)
+  expose_decorated(:events) { get_proper_events }
+  expose_decorated(:event)
+  expose(:my) { Geolocator.new(current_user, session, request).call }
 
   def index
   end
+
 
   def show
     @user = User.find(event.user_id)
@@ -56,10 +58,16 @@ class EventsController < ApplicationController
   end
 
   def map
-    @my = Geolocator.new(current_user, session, request).call
-    @events = Event.near(@my, 50)
+    self.events = Event.near(my, 50).decorate
   end
+  
+  protected
 
+  def search_params
+    # Ensure the user can only browse or search their own orders
+    params[:search] || {}
+  end
+  
   private
   def is_owner
     user = User.find(event.user_id)
@@ -71,4 +79,12 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:title, :description, :time, :location, :photo, :category_id)
     end
+  
+  def get_proper_events
+    if search_params.any?
+      EventSearch.new(search_params).results
+    else
+      Event.all
+    end
+  end
 end
