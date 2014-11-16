@@ -5,11 +5,12 @@ $ ->
   for category in $('.category')
     $category = $(category)
     text = $category.find($('h2')).text()
-    pattern = GeoPattern.generate(text);
-    $category.css('background-image', pattern.toDataUrl());
+    pattern = GeoPattern.generate(text)
+    $category.css('background-color', pattern.color)
+    $category.css('background-image', pattern.toDataUrl())
     $category.click ->
       $this = $(this)
-      $this.addClass('animated tada');
+      $this.addClass('animated tada')
       $this.one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
         $this.removeClass('animated tada')
         window.location = $this.attr('href')
