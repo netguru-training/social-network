@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     user.update! info: auth.info
     reset_session
     session[:user_id] = user.id.to_s
+    session[:geolocation] = request.env['omniauth.params']
     flash[:notice] = 'Signed in!'
     redirect_to categories_path
   end
