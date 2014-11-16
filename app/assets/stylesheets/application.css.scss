@@ -5,7 +5,7 @@
 @import 'animate';
 @import 'events';
 * {
-  border-radius: 0px !important;
+  border-radius: 0px;
 }
 
 html {
@@ -24,7 +24,7 @@ body {
   }
 
   #signin {
-    border-radius: 15px !important;
+    border-radius: 15px;
     a {
       padding: 10px;
       font-size: 2em;
