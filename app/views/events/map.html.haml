@@ -2,3 +2,5 @@
   .geolocation{ id: 'geolocation' }
   .locations
     .my{ data: { lat: @my[0], lng: @my[1], name: 'My!' } }
+    - @events.each do |event|
+      .location{ data: { lat: event.latitude, lng: event.longitude, name: 'location' }}
