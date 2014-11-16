@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
   expose(:user) { User.find(1) }
   expose(:events) {user.events}
+  expose(:attendances)
 
   def new
   end

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :groups
 
   resources :events
+
+  resources :attendances
+
   get 'map', to: 'events#map', as: 'map'
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   get 'invitations/index', as: 'invitations'
