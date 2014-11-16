@@ -24,6 +24,6 @@
         %li.page-scroll
           %p.location= current_user.location
       %li.page-scroll
-        %a{:href => "signout"} Log out
+        = link_to 'Log out', signout_path
       %li.page-scroll
         %img{ src: current_user.image }
