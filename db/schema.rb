@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115144029) do
+ActiveRecord::Schema.define(version: 20141116090151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,10 @@ ActiveRecord::Schema.define(version: 20141115144029) do
     t.datetime "photo_updated_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "category_id"
   end
+
+  add_index "events", ["category_id"], name: "index_events_on_category_id", using: :btree
 
   create_table "groups", force: true do |t|
     t.string   "name"
