@@ -3,8 +3,9 @@ class EventsController < ApplicationController
   before_action :authenticate_user
   before_action :is_owner, only: [:update, :edit]
   expose(:categories)
-  expose(:events)
-  expose(:event)
+  expose_decorated(:events)
+  expose_decorated(:event)
+  expose(:my) { Geolocator.new(current_user, session, request).call }
 
   def index
   end
@@ -56,8 +57,7 @@ class EventsController < ApplicationController
   end
 
   def map
-    @my = Geolocator.new(current_user, session, request).call
-    @events = Event.near(@my, 50).decorate
+    self.events = Event.near(@my, 50).decorate
   end
 
   private
