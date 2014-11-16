@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
 
+  expose(:categories)
   expose(:events)
   expose(:event)
    
@@ -55,6 +56,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :description, :time, :location, :photo)
+      params.require(:event).permit(:title, :description, :time, :location, :photo, :category_id)
     end
 end
