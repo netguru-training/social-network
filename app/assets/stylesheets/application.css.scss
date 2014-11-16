@@ -3,13 +3,7 @@
 @import 'categories';
 @import 'header';
 @import 'animate';
-* {
-  border-radius: 0px !important;
-}
-
-html {
-  height: 100%;
-}
+@import 'events';
 
 body {
   background-color: white;
@@ -23,7 +17,7 @@ body {
   }
 
   #signin {
-    border-radius: 15px !important;
+    border-radius: 15px;
     a {
       padding: 10px;
       font-size: 2em;
@@ -43,6 +37,4 @@ body {
 
 
 }
-.table-events {
-  background: white;
-}
+
